@@ -51,7 +51,7 @@ mechanized counterparts in Coq.
 
 - Assumption 2.3 (FCC): `S2I/Compiler.v`, Axiom `forward_simulation_star`
 
-- Lemma 2.4 (recomposition): `Intermediate/RecombinationRel.v`, Theorem `recombination_trace_rel`
+- Lemma 2.4 (recomposition): `Intermediate/RecompositionRel.v`, Theorem `recombination_trace_rel`
 
 - Assumption 2.5 (BCC): `S2I/Compiler.v`, Axiom `backward_simulation_star`
 
@@ -63,7 +63,7 @@ mechanized counterparts in Coq.
 
 - Lemma 3.5 (data-flow back-translation): `Source/Definability.v`, Lemma `definability`
 
-- Definition 3.9 (turn-taking memory relation): `Intermediate/RecombinationRelCommon.v`, Inductive proposition `mergeable_internal_states`
+- Definition 3.9 (turn-taking memory relation): `Intermediate/RecompositionRelCommon.v`, Inductive proposition `mergeable_internal_states`
 
 - Definition 3.10 (relation on interaction traces): `Common/RenamingOption.v`, Inductive proposition `traces_shift_each_other_option`
 
@@ -75,15 +75,15 @@ mechanized counterparts in Coq.
 
 - Lemma 5.1 (trace prefix mimicking): `Source/Definability.v`, Lemma `definability_gen_rel_right`
 
-- Definition 5.2 (memory relation at interaction events): `Intermediate/RecombinationRelCommon.v`, Inductive proposition `mergeable_border_states`
+- Definition 5.2 (memory relation at interaction events): `Intermediate/RecompositionRelCommon.v`, Inductive proposition `mergeable_border_states`
 
-- Lemma 5.3 (strengthening at interaction events): `Intermediate/RecombinationRelStrengthening.v`, Theorem `threeway_multisem_event_lockstep_program_step`
+- Lemma 5.3 (strengthening at interaction events): `Intermediate/RecompositionRelStrengthening.v`, Theorem `threeway_multisem_event_lockstep_program_step`
 
-- Lemma 5.4 (option simulation): `Intermediate/RecombinationRelOptionSim.v`, Lemma `merge_states_silent_star`
+- Lemma 5.4 (option simulation): `Intermediate/RecompositionRelOptionSim.v`, Lemma `merge_states_silent_star`
 
-- Lemma 5.5 (lockstep simulation): `Intermediate/RecombinationRelLockstepSim.v`, Theorem `threeway_multisem_star_E0`
+- Lemma 5.5 (lockstep simulation): `Intermediate/RecompositionRelLockstepSim.v`, Theorem `threeway_multisem_star_E0`
 
-- Lemma 5.6 (symmetry of the turn-taking state simulation relation): `Intermediate/RecombinationRelCommon.v`, Lemma `mergeable_internal_states_sym`
+- Lemma 5.6 (symmetry of the turn-taking state simulation relation): `Intermediate/RecompositionRelCommon.v`, Lemma `mergeable_internal_states_sym`
 
 ## Axioms ##
 
@@ -241,13 +241,13 @@ The source language `SafeP` corresponds to `Source` in the code. The target lang
 
 - Backtranslation function `↑`: function `procedures_of_trace` in `Source/Definability.v`
 - Data-flow events `E`: inductive `event_inform` in `Common/TracesInform.v`
-- Memory projection `proj_P(Mem)`: implicit in definitions `mem_of_part_executing_rel_original_and_recombined` and `mem_of_part_not_executing_rel_original_and_recombined_at_internal` in `Intermediate/RecombinationRelCommon.v`
+- Memory projection `proj_P(Mem)`: implicit in definitions `mem_of_part_executing_rel_original_and_recombined` and `mem_of_part_not_executing_rel_original_and_recombined_at_internal` in `Intermediate/RecompositionRelCommon.v`
 - Value renaming `valren`: function `rename_value_template_option` in `Common/RenamingOption.v`
 - The +1 block id renaming: Implemented by instantiating `shift_value_option` with `uniform_shift 0` and `uniform_shift 1`, in `Common/RenamingOption.v`
-- Turn-taking simulation invariant `state_rel_tt`: definition `mergeable_internal_states` in `Intermediate/RecombinationRelCommon.v`
-- Turn-taking simulation relation `mem_rel_tt`: memory part of the `mergeable_internal_states` definition in `Intermediate/RecombinationRelCommon.v`
-- Strong memory relation holding at all locations of the executing part `mem_rel_exec`: definition `mem_of_part_executing_rel_original_and_recombined` in `Intermediate/RecombinationRelCommon.v`
-- Memory relation holding only at private locations of the non-executing part `mem_rel_not_exec`: definition `mem_of_part_not_executing_rel_original_and_recombined_at_internal` in `Intermediate/RecombinationRelCommon.v`
+- Turn-taking simulation invariant `state_rel_tt`: definition `mergeable_internal_states` in `Intermediate/RecompositionRelCommon.v`
+- Turn-taking simulation relation `mem_rel_tt`: memory part of the `mergeable_internal_states` definition in `Intermediate/RecompositionRelCommon.v`
+- Strong memory relation holding at all locations of the executing part `mem_rel_exec`: definition `mem_of_part_executing_rel_original_and_recombined` in `Intermediate/RecompositionRelCommon.v`
+- Memory relation holding only at private locations of the non-executing part `mem_rel_not_exec`: definition `mem_of_part_not_executing_rel_original_and_recombined_at_internal` in `Intermediate/RecompositionRelCommon.v`
 - Function `shared`: inductive `addr_shared_so_far` in `Common/RenamingOption.v`
 - Function `private`: negation of the inductive `addr_shared_so_far` in `Common/RenamingOption.v`
 - Linking `C ∪ P`: functions `program_link` in `Source/Language.v` and `Intermediate/Machine.v`
@@ -265,7 +265,7 @@ The source language `SafeP` corresponds to `Source` in the code. The target lang
 - Back-translation `mimicking_state` invariant: definition `well_formed_state` in `Source/Definability.v`
 - Back-translation of a data-flow event: definition `expr_of_event` in `Source/Definability.v`
 - Trace concatenation `++`: function `Eapp` in `CompCert/Events.v`
-- Border-state relation `state_rel_border`: definition `mergeable_border_states` in `Intermediate/RecombinationRelCommon.v`
+- Border-state relation `state_rel_border`: definition `mergeable_border_states` in `Intermediate/RecompositionRelCommon.v`
 - "Is executing in" relation: `is_program_component` and `is_context_component` in `Intermediate/CS.v`
 
 ## License ##
