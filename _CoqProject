@@ -29,11 +29,11 @@ Intermediate/Machine.v
 Intermediate/GlobalEnv.v
 Intermediate/CS.v
 Intermediate/CSInvariants.v
-Intermediate/RecombinationRelCommon.v
-Intermediate/RecombinationRelOptionSim.v
-Intermediate/RecombinationRelLockstepSim.v
-Intermediate/RecombinationRelStrengthening.v
-Intermediate/RecombinationRel.v
+Intermediate/RecompositionRelCommon.v
+Intermediate/RecompositionRelOptionSim.v
+Intermediate/RecompositionRelLockstepSim.v
+Intermediate/RecompositionRelStrengthening.v
+Intermediate/RecompositionRel.v
 
 Source/Language.v
 Source/GlobalEnv.v

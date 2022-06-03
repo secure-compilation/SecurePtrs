@@ -12,10 +12,10 @@ Require Import Intermediate.Machine.
 Require Import Intermediate.GlobalEnv.
 Require Import Intermediate.CS.
 Require Import Intermediate.CSInvariants.
-Require Import Intermediate.RecombinationRelCommon.
-Require Import Intermediate.RecombinationRelOptionSim.
-Require Import Intermediate.RecombinationRelLockstepSim.
-Require Import Intermediate.RecombinationRelStrengthening.
+Require Import Intermediate.RecompositionRelCommon.
+Require Import Intermediate.RecompositionRelOptionSim.
+Require Import Intermediate.RecompositionRelLockstepSim.
+Require Import Intermediate.RecompositionRelStrengthening.
 
 Require Import Coq.Program.Equality.
 Require Import Coq.Setoids.Setoid.
@@ -1479,7 +1479,7 @@ Section ThreewayMultisem5.
 End ThreewayMultisem5.
 
 (* Main simulation theorem. *)
-Section Recombination.
+Section Recomposition.
   Variables p c p' c' : program.
   Variables n n'' : Component.id -> nat.
 
@@ -1784,7 +1784,7 @@ Section Recombination.
   Qed.
   
 
-End Recombination.
+End Recomposition.
 
 
 Print Assumptions recombination_prefix_rel.

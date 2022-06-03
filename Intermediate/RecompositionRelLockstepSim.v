@@ -12,7 +12,7 @@ Require Import Intermediate.Machine.
 Require Import Intermediate.GlobalEnv.
 Require Import Intermediate.CS.
 Require Import Intermediate.CSInvariants.
-Require Import Intermediate.RecombinationRelCommon.
+Require Import Intermediate.RecompositionRelCommon.
 
 Require Import Coq.Program.Equality.
 Require Import Coq.Setoids.Setoid.

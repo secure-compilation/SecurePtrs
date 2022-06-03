@@ -13,7 +13,7 @@ Require Import Source.GlobalEnv.
 Require Import Source.CS.
 Require Import Intermediate.Machine.
 Require Import Intermediate.CS.
-Require Import Intermediate.RecombinationRel.
+Require Import Intermediate.RecompositionRel.
 Require Import S2I.Compiler.
 Require Import S2I.Definitions.
 
@@ -442,7 +442,7 @@ Section RSC_Section.
     }
 
     
-    pose proof Intermediate.RecombinationRel.recombination_trace_rel
+    pose proof Intermediate.RecompositionRel.recombination_trace_rel
     well_formed_p_compiled
     well_formed_Ct
     well_formed_P'_compiled
@@ -510,20 +510,20 @@ End RSC_Section.
 
 (* Check RSC. *)
 (* Print Assumptions S2I.Compiler.forward_simulation_star. *)
-(* Print Assumptions Intermediate.RecombinationRel.recombination_trace_rel. *)
+(* Print Assumptions Intermediate.RecompositionRel.recombination_trace_rel. *)
 (* Print Assumptions S2I.Compiler.backward_simulation_star. *)
 (* Print CompCert.Events.event. *)
 (* Print Common.TracesInform.event_inform. *)
 (* Print Assumptions Intermediate.CS.CS.star_sem_non_inform_star_sem_inform. *)
 (* Print Assumptions Source.Definability.definability. *)
-(* Print Intermediate.RecombinationRelCommon.mergeable_internal_states. *)
+(* Print Intermediate.RecompositionRelCommon.mergeable_internal_states. *)
 (* Print Common.RenamingOption.traces_shift_each_other_option. *)
 (* Check Intermediate.CS.CS.Jump. *)
 (* Check Intermediate.CS.CS.Store. *)
 (* Print Assumptions RSC. *)
 (* Print Assumptions Source.Definability.definability_gen_rel_right. *)
-(* Print Intermediate.RecombinationRelCommon.mergeable_border_states. *)
-(* Print Assumptions Intermediate.RecombinationRelStrengthening.threeway_multisem_event_lockstep_program_step. *)
-(* Print Assumptions Intermediate.RecombinationRelOptionSim.merge_states_silent_star. *)
-(* Print Assumptions Intermediate.RecombinationRelLockstepSim.threeway_multisem_star_E0. *)
-(* Print Assumptions Intermediate.RecombinationRelCommon.mergeable_internal_states_sym. *)
+(* Print Intermediate.RecompositionRelCommon.mergeable_border_states. *)
+(* Print Assumptions Intermediate.RecompositionRelStrengthening.threeway_multisem_event_lockstep_program_step. *)
+(* Print Assumptions Intermediate.RecompositionRelOptionSim.merge_states_silent_star. *)
+(* Print Assumptions Intermediate.RecompositionRelLockstepSim.threeway_multisem_star_E0. *)
+(* Print Assumptions Intermediate.RecompositionRelCommon.mergeable_internal_states_sym. *)

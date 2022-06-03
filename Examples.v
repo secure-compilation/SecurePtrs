@@ -14,7 +14,7 @@ Require Import Source.GlobalEnv.
 Require Import Source.CS.
 Require Import Intermediate.Machine.
 Require Import Intermediate.CS.
-Require Import Intermediate.RecombinationRel.
+Require Import Intermediate.RecompositionRel.
 Require Import S2I.Compiler.
 Require Import S2I.Definitions.
 
